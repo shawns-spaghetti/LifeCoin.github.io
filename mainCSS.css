@@ -1,0 +1,274 @@
+/* root defines global CSS variables for consistent theming */
+		:root{--bg:#f7faf8;--card:#ffffff;--accent:#0b6e4f;--muted:#6b7280;--glass:rgba(11,110,79,0.06)}
+		*{box-sizing:border-box}
+
+        /* both the html and body take full height of viewport */
+		html,body{height:100%}
+
+        /* body stylizing:
+            1. removes margins
+            2. sets the font family to INTER
+            3. system-ui sets the default font to the users local system font
+            4. the list of fonts is a FONT STACK, used to guarantee redundancy
+               case something goes wrong with one of the fonts
+            5. color is set to black
+            6. there is a liner gradient for the body that is downward (180 
+               degrees) that goes from variable bg (found above) to
+               pure white (#fff)
+        */
+		body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
+        color:#0f172a;background:linear-gradient(180deg,var(--bg),#fff)}
+
+        /* header stylizing:
+            1. there is a linear gradient for the header that goes to the right
+               (90 degrees) from a dark teal denoted by the rgba value to transparent
+            2. there is a padding around the header; the shorthand 28 denotes 
+               the top and bottom padding while 20 denotes the left and right padding
+        */
+		header{background:linear-gradient(90deg,rgba(11,110,79,0.08),transparent);padding:28px 20px}
+
+        /* container class stylizing:
+            1. max-width is set to 1100px
+            2. margin is set to 0 auto, which sets the margins to 0 and adjusts
+               the container to be centered horizontally in the container
+            3. padding is set to 0 on top and bottom and 20px on left and right
+        */
+		.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+        /* nav class stylizing:
+            1. display:flex sets the nav items to be flexboxes, which allows for
+               dynamic layouts based on the alignment properties
+            2. align-items is center, which centers items vertically
+            3. justify-content is space-between, which spaces items out horizontally
+               with space in between
+            4. gap is set to 16px, which sets the gap between items in the flexbox
+        */
+		.nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+
+        /* brand class stylizing:
+            1. display:flex sets the brand items to be flexboxes
+            2. align-items is center, which centers items vertically
+            3. gap is set to 10px, which sets the gap between items in the flexbox
+            4. font-weight is set to 700, which makes the font bold
+            5. color is set to the accent variable defined above
+        */
+		.brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--accent)}
+
+        /* logo class stylizing:
+            1. width and height are both set to 32px, making it a square
+            2. background-color is set to the accent variable defined above
+            3. border-radius is set to 6px, which rounds the corners of the square
+            4. I've added an img tag inside the logo span in order to specifically
+               modify the image size. This makes the background color kind of obsolete
+               but I'll keep it as a failsafe in case the image doesn't load.
+
+            This needs to eventually be replaced with the actual logo image or 
+            some version of it. I think the current logo is a bit too complex
+            for such a small size, so either the layout has to change or I have
+            to use a simpler logo
+        */
+        .logo img{width:32px;height:32px;background-color:var(--accent);border-radius:6px}
+
+        /* nav a stylizing:
+            1. color is set to the muted variable defined above
+            2. text-decoration is none, which removes the underline from links
+            3. margin-left is set to 18px, which adds space between links
+            4. font-weight is set to 600, which makes the font semi-bold
+
+            This is seen with the three items in the navigation bar
+
+            NOTE: I need to figure out how the padding between the two parts of 
+            the nav bar works.
+        */
+		nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+
+        /* main stylizing:
+            1. padding is set to 48px on top and bottom and 0 on left and right
+
+            What is the padding on top and bottom for? changing the top and bottom 
+            value doesn't seem to do anything and neither does changing the left and right
+            value.
+        */
+		main{padding:48px 0}
+
+        /* hero class stylizing:
+            1. display is set to grid, which allows for dynamic layouts based on
+               the grid properties; this is similar to flexbox but allows for
+               two dimensional layouts instead of just one dimensional layouts
+            2. grid-template-columns is set to 1fr, which means that everything
+               in the grid will be lined up as one full column. adding more fr
+               will divide the grid into more columns. fr is an arbitrary fractional
+               unit that denotes the amount of space an item should take up relative
+               to all of the other items in the grid.
+            3. gap is set to 28px, which sets the gap between items in the grid
+            4. align-items is center, which centers items vertically in their grid cells
+        */
+		.hero{display:grid;grid-template-columns: 1fr;gap:28px;align-items:center}
+
+        /* hero-inner class stylizing:
+            1. display is set to flex, which allows for dynamic layouts based on
+               the alignment properties
+            2. flex-direction is set to column, which means that items will be
+               laid out vertically instead of horizontally
+            3. gap is set to 18px, which sets the gap between items in the flexbox
+
+            NOTE: I thought I knew how the grid template columns property worked,
+            but it looks like once the screen is big enough, two columns will appear
+            so I need to figure that out
+        */
+		.hero-inner{display:flex;flex-direction:column;gap:18px}
+
+        /* h1 stylizing:
+            1. font-size is set to clamp(28px,4.2vw,42px), which means that the
+               font size will be at least 28px, at most 42px, and will scale
+               with 4.2% of the viewport width (vw) in between those two values
+            2. margin is set to 0, which removes any default margins
+            3. line-height is set to 1.02, which sets the space between lines of text
+            4. color is set to a dark green (#052117)
+        */
+		h1{font-size:clamp(28px,4.2vw,42px);margin:0;line-height:1.02;color:#052117}
+
+        /* lead class stylizing:
+            1. margin is set to 0, which removes any default margins
+            2. color is set to the muted variable defined above
+            3. font-size is set to 1.05rem where rem stands for root em, the relative
+               font size based on the root element (html); 1rem is usually 16px 
+               by default
+        */
+		p.lead{margin:0;color:var(--muted);font-size:1.05rem}
+
+        /* cta-row class stylizing:
+            1. display is set to flex, which allows for dynamic layouts based on
+               the alignment properties
+            2. gap is set to 12px, which sets the gap between items in the flexbox
+            3. flex-wrap is set to wrap, which allows items to wrap onto multiple
+               lines if there isn't enough space in one line
+        */
+		.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+
+        /* btn class stylizing:
+            1. display is set to inline-flex, which lines up the button with
+               the other elements while keeping its size flexible
+            2. align-items is center, which centers items vertically in their flexbox
+            3. gap is set to 10px, which sets the gap between items in the flexbox
+            4. padding is set to 12px on top and bottom and 18px on left and right
+            5. border-radius is set to 10px, which rounds the corners of the button
+            6. border is set to none, which removes any default borders
+            7. cursor is set to pointer, which changes the cursor to a pointer
+               when hovering over the button
+            8. font-weight is set to 700, which makes the font bold
+        */
+		.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+
+        /* btn-primary class stylizing:
+            1. background is set to the accent variable defined above
+            2. color is set to white (#fff)
+        */
+		.btn-primary{background:var(--accent);color:#fff}
+
+        /* btn-ghost class stylizing:
+            1. background is set to transparent
+            2. border is set to 1px solid with the accent variable defined above
+            3. color is set to the accent variable defined above
+
+            ** CLARIFICATION **
+               ghost button isn't actually a technical term, its just a design 
+               term for a button that is transparent with a border that the AI
+               generated
+        */
+		.btn-ghost{background:transparent;border:1px solid var(--accent);color:var(--accent)}
+
+        /* stats class stylizing:
+            1. display is set to flex, which allows for dynamic layouts based on
+               the alignment properties
+            2. gap is set to 18px, which sets the gap between items in the flexbox
+            3. margin-top is set to 6px, which adds space above the stats section
+        */
+		.stats{display:flex;gap:18px;margin-top:6px}
+
+        /* stat class stylizing:
+            1. background is set to the card variable defined above (white)
+            2. padding is set to 12px on all sides
+            3. border-radius is set to 10px, which rounds the corners of the stat box
+            4. box-shadow is set to create a subtle shadow effect around the stat box
+            5. min-width is set to 110px, which ensures that the stat box is at least
+               110px wide
+            6. text-align is center, which centers the text horizontally within
+               the stat box
+        */
+		.stat{background:var(--card);padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,0.06);min-width:110px;text-align:center}
+		
+        /* features class stylizing:
+            1. display is set to grid, which allows for dynamic layouts based on
+               the grid properties
+            2. grid-template-columns is set to repeat(auto-fit,minmax(240px,1fr)),
+               which means that the grid will automatically fit as many columns
+               as possible with a minimum width of 240px and a maximum width of
+               1fr (the remaining space in the grid)
+            3. gap is set to 16px, which sets the gap between items in the grid
+            4. margin-top is set to 36px, which adds space above the features section
+        */
+        .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:36px}
+        /* feature class stylizing:
+            1. background is set to the card variable defined above (white)
+            2. padding is set to 20px on all sides
+            3. border-radius is set to 12px, which rounds the corners of the feature box
+            4. border is set to 1px solid with the glass variable defined above,
+               which adds a subtle border around the feature box
+            **NOTE** : the glass variable is actually a really cool implementation.
+            it uses rgba values to create a transparent effect for a light green
+            border which gives the features boxes a more subtle border that doesn't
+            detract them from the background.
+        */
+		.feature{background:var(--card);padding:20px;border-radius:12px;border:1px solid var(--glass)}
+        /* pricing class stylizing:
+            1. display is set to grid, which allows for dynamic layouts based on
+               the grid properties
+            2. grid-template-columns is set to repeat(auto-fit,minmax(220px,1fr)),
+               which means that the grid will automatically fit as many columns
+               as possible with a minimum width of 220px and a maximum width of
+               1fr (the remaining space in the grid)
+            3. gap is set to 16px, which sets the gap between items in the grid
+            4. margin-top is set to 28px, which adds space above the pricing section
+        */
+		.pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:28px}
+        /* card class stylizing:
+            1. background is set to the card variable defined above (white)
+            2. padding is set to 20px on all sides
+            3. border-radius is set to 12px, which rounds the corners of the card box
+            4. border is set to 1px solid with the glass variable defined above,
+               which adds a subtle border around the card box
+        */
+		.card{background:var(--card);padding:20px;border-radius:12px;border:1px solid var(--glass)}
+        /* contact class stylizing:
+            1. display is set to grid, which allows for dynamic layouts based on
+               the grid properties
+            2. gap is set to 12px, which sets the gap between items in the grid
+            3. max-width is set to 600px, which limits the width of the contact form
+        */
+		form.contact{display:grid;gap:12px;max-width:600px}
+        /* input and text area stylizing:
+            1. padding is set to 12px on all sides
+            2. border-radius is set to 8px, which rounds the corners of the input
+               and textarea boxes
+            3. border is set to 1px solid with a light blue-gray color (#e6eef0)
+            4. font-size is set to 1rem, which is usually 16px by default
+        */
+		input,textarea{padding:12px;border-radius:8px;border:1px solid #e6eef0;font-size:1rem}
+        /* footer stylizing:
+            1. padding is set to 28px on top and bottom and 0 on left and right
+            2. color is set to the muted variable defined above
+        */
+		footer{padding:28px 0;color:var(--muted)}
+        /* media query for screens wider than 900px:
+            1. hero class grid-template-columns is set to 1fr 420px, which means
+               that the first column will take up the remaining space and the
+               second column will be 420px wide
+            2. hero .card height is set to 100%, which makes the card take up
+               the full height of its grid cell
+            **NOTE** : this will override all other css properties for screens
+            wider than 900 pixels. It's what was causing the one column grid 
+            layout to be able to turn into a two column grid layout as the screen 
+            got wider.
+        */
+		@media(min-width:900px){.hero{grid-template-columns:1fr 420px}.hero .card{height:100%}}

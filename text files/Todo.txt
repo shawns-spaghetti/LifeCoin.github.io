@@ -1,0 +1,24 @@
+Done:
+    1. Figure out the padding in the navigation bar between "lifecoin" and 
+       "how it works"
+       **ANSWER** : Because the nav bar is a flexbox, using "justify-content: space between"
+                    evenly distributes the items in the nav bar. Since technically there's
+                    only 2 items in the nav bar at that level, there exists a big gap
+                    in between the two.
+    2. Figure out how "grid-template-columns" works and why there are two columns
+       in hero even though there is only one "1fr"
+        **Still can't figure this out, ask friend for help**
+       **ANSWER** : There actually wasn't anything wrong with the implementation of 
+                    grid-template-columns. The issue stems from a tag @media that
+                    is designed to override all other css formatting in order to 
+                    adjust really important stuff to fit different screen sizes. 
+                    This was overriding the css for the hero box and creating two
+                    columns rather than one whenever the screen size was big enough.
+    3. move the css properties to a seperate css file 
+       Done! The css for the main page can be found in mainCSS.css
+
+Short Term:
+    - Create a server for the website, whether it is through github or amazonAWS
+Long Term:
+    - Create the backend code for the program, including an AI image recognition
+      system that will be able to tag health indicators

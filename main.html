@@ -1,0 +1,133 @@
+<!doctype html>
+
+<!-- lang denotes the language of the webpage-->
+<html lang="en">
+
+<head>
+    <!-- denoting the character encoding system used; utf8 is the current version-->
+	<meta charset="utf-8" />
+
+    <!-- viewport is used to scale to user screen-->
+    <!-- content adjusts the width to the user screen-->
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- title of the tab-->
+    <!-- Note: I want this to be relatively short-->
+	<title>LifeCoin</title>
+
+    <!-- Under the meta inforamtion, writing the content and theme color-->
+    <!-- These could both be useful for later use so I'm going to keep both-->
+	<meta name="description" content="LifeCoin uses AI to find you personalized life-insurance savings — smarter underwriting, better rates, fairer premiums." />
+	<meta name="theme-color" content="#0b6e4f" />
+
+    <!-- CSS styling for the webpage-->
+    <!-- Note: This currently is really ugly. I think I want to move this to-->
+    <!-- a dedicated CSS file in the future.--> 
+
+    <link rel ="stylesheet" href="mainCSS.css" />
+</head>
+<body>
+	<header>
+		<div class="container nav">
+			<div class="brand">
+				<span class="logo" aria-hidden="true">
+                    <img src="/Images/Simple logo.png" alt="lifecoin logo"/>
+                </span>
+				<span>LifeCoin</span>
+			</div>
+			<nav aria-label="Main navigation">
+				<a href="#how">How it works</a>
+				<a href="#pricing">Pricing</a>
+				<a href="#contact">Talk to sales</a>
+			</nav>
+		</div>
+	</header>
+
+	<main class="container">
+		<section class="hero">
+			<div class="hero-inner">
+				<h1>Reduce life insurance costs using AI-driven underwriting</h1>
+				<p class="lead">We analyze health records, behaviors, and policy options to negotiate smarter rates and reduce premiums — fairly and transparently.</p>
+				<div class="cta-row">
+					<a class="btn btn-primary" href="#contact">Get a personalized quote</a>
+					<a class="btn btn-ghost" href="#how">See how it works</a>
+				</div>
+
+				<div class="stats" aria-hidden="false">
+					<div class="stat"><div style="font-size:1.25rem;font-weight:800">Up to 35%</div><div style="font-size:0.85rem;color:var(--muted)">Average savings</div></div>
+					<div class="stat"><div style="font-size:1.25rem;font-weight:800">Instant</div><div style="font-size:0.85rem;color:var(--muted)">Preliminary offers</div></div>
+					<div class="stat"><div style="font-size:1.25rem;font-weight:800">HIPAA-ready</div><div style="font-size:0.85rem;color:var(--muted)">Secure data handling</div></div>
+				</div>
+			</div>
+
+			<aside class="card" aria-labelledby="demo-title">
+				<h2 id="demo-title" style="margin-top:0">Quick demo</h2>
+				<p style="color:var(--muted)">Enter a few details and see potential savings instantly. Our AI evaluates 100+ data signals to find the best offers.</p>
+				<form class="contact" onsubmit="demoSubmit(event)">
+					<input type="text" name="name" placeholder="Full name" required />
+					<input type="email" name="email" placeholder="Email" required />
+					<button class="btn btn-primary" type="submit">Try the demo</button>
+				</form>
+			</aside>
+		</section>
+
+		<section id="how">
+			<h3 style="margin-top:36px">How LifeCoin works</h3>
+			<div class="features">
+				<div class="feature">
+					<strong>Smart intake</strong>
+					<p style="margin:8px 0;color:var(--muted)">We securely ingest medical records and lifestyle signals with user consent. </p>
+				</div>
+				<div class="feature">
+					<strong>AI-powered matching</strong>
+					<p style="margin:8px 0;color:var(--muted)">Proprietary models match you to carriers and underwriting paths for optimal pricing.</p>
+				</div>
+				<div class="feature">
+					<strong>Clear recommendations</strong>
+					<p style="margin:8px 0;color:var(--muted)">Actionable steps and policy comparisons you can trust.</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="pricing">
+			<h3 style="margin-top:36px">Pricing</h3>
+			<div class="pricing">
+				<div class="card">
+					<h4>Pay-as-you-save</h4>
+					<p style="color:var(--muted)">No upfront fee — we take a small percentage of realized savings.</p>
+				</div>
+				<div class="card">
+					<h4>Enterprise</h4>
+					<p style="color:var(--muted)">Custom integrations, privacy controls, and SLAs for brokerages and employers.</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="contact" style="margin-top:36px">
+			<h3>Talk to us</h3>
+			<form class="contact" onsubmit="contactSubmit(event)">
+				<input name="company" placeholder="Company (optional)" />
+				<input name="email" type="email" placeholder="Email" required />
+				<textarea name="message" rows="4" placeholder="How can we help?" required></textarea>
+				<div style="display:flex;gap:12px;align-items:center">
+					<button class="btn btn-primary" type="submit">Request a quote</button>
+					<small style="color:var(--muted)">We respond within 1-2 business days.</small>
+				</div>
+			</form>
+		</section>
+	</main>
+
+	<footer>
+		<div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+			<div style="font-weight:700;color:var(--accent)">LifeCoin</div>
+			<div style="color:var(--muted)">© 2026 LifeCoin — AI-driven life insurance optimization</div>
+		</div>
+	</footer>
+
+	<script>
+		function demoSubmit(e){e.preventDefault();alert('Demo request received — we\'ll email a sample savings estimate.');}
+		function contactSubmit(e){e.preventDefault();alert('Thanks — we\'ll reach out about your quote.');}
+		document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const id=a.getAttribute('href').slice(1);const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}));
+	</script>
+</body>
+</html>
