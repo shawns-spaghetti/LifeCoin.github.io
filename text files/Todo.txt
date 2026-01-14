@@ -16,9 +16,13 @@ Done:
                     columns rather than one whenever the screen size was big enough.
     3. move the css properties to a seperate css file 
        Done! The css for the main page can be found in mainCSS.css
-
+    4. Create a server for the website, whether it is through github or amazonAWS
+       Done! The website can be found at: https://shawns-spaghetti.github.io/LifeCoin.github.io/
 Short Term:
-    - Create a server for the website, whether it is through github or amazonAWS
+    - Currently, the logo is rendering in the github page. I need to figure out 
+      why this is happening and fix the code so that the logo does render properly. 
+    - The logo is also not a square, probably because of something to do with the
+      css. Let's make sure to fix that so it becomes a square again.
 Long Term:
     - Create the backend code for the program, including an AI image recognition
       system that will be able to tag health indicators

@@ -67,7 +67,8 @@
             for such a small size, so either the layout has to change or I have
             to use a simpler logo
         */
-        .logo img{width:32px;height:32px;background-color:var(--accent);border-radius:6px}
+        .logo {width:32px;height:32px;background-color:var(--accent);border-radius:6px}
+        .logo img {width:20px;height:20px;display:block;margin:auto;padding:6px}
 
         /* nav a stylizing:
             1. color is set to the muted variable defined above
